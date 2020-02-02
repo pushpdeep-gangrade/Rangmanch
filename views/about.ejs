@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Rangmanch</title>
+		<link rel="stylesheet" href="/assets/stylesheets/index.css">
+	</head>
+<body>
+
+	<%include partials/header.ejs %>
+
+	<!--top nav bar -->
+	<div class="gen_nav">
+	<%include partials/navigation.ejs %>
+	<p>
+	    <% if(currentUser){  %>
+	      Welcome
+	    <%= currentUser.userFirstName %>
+	    !!
+	  <% } %>
+	</p></div>
+
+	<!--main content -->
+	<div class = "main">
+		<p>
+      Rangmanch is all about bringing the artist inside you it will help you to know about the upcoming workshops in this domain.
+			Stay connected and enhance the artistic skills inside you.	</p>
+	</div>
+
+	<!--footer -->
+	<%include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+  <div class="header">
+		<a href="/index" class="logo">
+		<img src="/assets/images/logo.png" alt="brand image"/>
+		</a>
+
+		<div class="topnav">
+		<a class="active" href="/newConnection">Start a new Connection</a>
+		<a class="active" href="/login">
+      <% if(currentUser){  %>
+              My connections
+          <% } %>
+          <% if(!currentUser) {  %>
+              Login
+          <% } %>
+          </a> |
+        <a href="/signup">
+          <% if(currentUser){  %>
+            Sign Out
+        <% } %>
+        <% if(!currentUser) {  %>
+            Sign Up
+        <% } %>
+    </a>
+		<!-- <a href="/savedConnections">Sign Up</a> -->
+	</div>
+
+	</div>

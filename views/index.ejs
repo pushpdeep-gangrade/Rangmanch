@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Rangmanch</title>
+		<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+	</head>
+<body>
+	<!--Header -->
+	<%include partials/header.ejs %>
+
+	<!-- nav bar --><div class="gen_nav">
+	<%include partials/navigation.ejs %>
+	<p>
+	    <% if(currentUser){  %>
+	      Welcome
+	    <%= currentUser.userFirstName %>
+	    !!
+	  <% } %>
+	</p></div>
+
+	<!--main content -->
+	<div class = "main">
+		<p>
+		Welcome to Rangmanch. Rangmanch is a platform helps you to socialize with people of common intrest. All the upcoming events
+will be displayed on this website.
+		</p>
+		<p>
+		Checkout few of events by clicking on Connections.
+		</p>
+	</div>
+
+	<!--footer -->
+	<%include partials/footer.ejs %>
+
+</body>
+</html>

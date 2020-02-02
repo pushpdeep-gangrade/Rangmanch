@@ -1,0 +1,321 @@
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+
+.header img{
+	height:100px;
+	border: 4px solid #111;
+    border-radius: 4px;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/* top navigation bar styling______________________________________________*/
+
+/* Style the top navigation bar */
+.topnav {
+  float:right;
+  overflow: hidden;
+  background-color: #111;
+  margin-top: 10px;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* general navigation bar */
+
+.gen_nav {
+
+  overflow: hidden;
+  background-color: #111;
+  margin-top: 10px;
+}
+
+/* Style the topnav links */
+.gen_nav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Change color on hover */
+.gen_nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.loginName p{
+  color:green;
+	display:block;
+	 text-align: right;
+	 padding-right:14px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.gen_nav p{
+	color:green;
+	display:block;
+	 text-align: right;
+	 padding-right:14px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+form{
+   margin-top: 10px;
+}
+
+input[type=text],[type=date],[type=password]  {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 4px 0;
+  text-decoration: none;
+  font-size: 18px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+
+#details{
+  height: 100px;
+}
+
+input[type=submit]{
+  width: 50%;
+  background-color: #111;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  text-decoration: none;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inputvalidatation{
+  color: red;
+}
+
+.con_deco{
+	font-size: 30px;
+	font-weight:bold;
+}
+
+.main ul{
+	list-style-type:none;
+}
+
+.host_img{
+	    float: left;
+}
+
+.contactImage img{
+  height: 50px;
+  width: 50px;
+}
+
+.con_highlight{
+	    margin: ;
+    margin-left: 50px;
+	display:inline-block;
+
+}
+
+
+.host_img img{
+	height:125px;
+	width:125px;
+}
+
+.main ul li{
+	padding:4px;
+}
+
+.main a{
+	text-decoration:none;
+}
+
+.main a:hover{
+	background-color: #ddd;
+	text-decoration:underline;
+  color: black;
+
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.button:hover{
+	background-color: #ddd;
+  color: black;
+
+}
+/* footer styling___________________________________*/
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 99%;
+   background-color: #111;
+   color: white;
+   text-align: center;
+   margin-top: 10px;
+   margin-left: 10px;
+  margin-right:10px;
+  margin-bottom: 10px;
+}
+/*book logo image*/
+.bookimage {
+	margin-top : 10px;
+	align: center;
+}
+
+/*button styles*/
+.buttongen {
+  background-color: Black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnYes{
+	 background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnNo{
+	background-color: red;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.btnNotSure{
+	 background-color: blue;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+table, td, th {
+  border: 1px solid black;
+}
+
+td,th{
+	width:15%;
+}
+
+.tableStyle{
+	border-collapse: collapse;
+
+}
+
+.choice{
+	float: left;
+  width: 400px;
+  height: 200px;
+  margin: 1em;
+}

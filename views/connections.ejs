@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Rangmanch</title>
+	</head>
+<body>
+	<!--Header -->
+		<%include partials/header.ejs %>
+
+	<!--top nav bar --><div class="gen_nav">
+		<%include partials/navigation.ejs %>
+		<p>
+		    <% if(currentUser){  %>
+		      Welcome
+		    <%= currentUser.userFirstName %>
+		    !!
+		  <% } %>
+		</p></div>
+
+	<!--main content -->
+	<div class = "main">
+		<% Object.keys(connectionTopics).forEach(topic =>{%>
+		<p class="con_deco"><%= topic %></p>
+	<ul>
+		 <%connectionTopics[topic].forEach(con => {%>
+		<li><a href="<%= "/connection?conId=" +con.conId %>"><%= con.conName %></a></li>
+<% });%>
+	</ul>
+	<% });%>
+	</div>
+
+	<!--footer -->
+		<%include partials/footer.ejs %>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+	</head>
+<body>
+		<%include partials/header.ejs %>
+
+		<!-- nav bar --><div class="gen_nav">
+		<%include partials/navigation.ejs %>
+		<p>
+		    <% if(currentUser){  %>
+		      Welcome
+		    <%= currentUser.userFirstName %>
+		    !!
+		  <% } %>
+		</p></div>
+	<!--main content -->
+	<div class = "main">
+		<form class="newConForm" method="POST" action="/signIn">
+ 		<input type="text" id="userName" name="userName" placeholder="Username">
+		<% if(errorMessages[0]) { %><label class="inputvalidatation"><%= errorMessages[0].msg %></label><% } %><br>
+	   <input type="password" id="password" name="password" placeholder="Password">
+		 <% if(errorMessages[1]) { %><label class="inputvalidatation"><%= errorMessages[1].msg %></label><% } %><br>
+	    <input type="submit" value="Login">
+	  </form>
+    </div>
+	<!--footer -->
+		<%include partials/footer.ejs %>
+
+</body>
+</html>

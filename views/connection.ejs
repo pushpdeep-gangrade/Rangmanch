@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title><%= singleConnection.conName %></title>
+<script>
+      function onBtnClick(rsvp,connectionId) {
+        window.location.href = "/savedConnections/updateRSVP?status="+rsvp+"&conId="+connectionId;
+      }
+			function onDeleteButtonClick(connectionId) {
+		window.location.href = "/deleteConnection?conId=" + connectionId;
+	};
+	function onEditButtonClick(connectionId) {
+		window.location.href = "/newConnection?conId=" + connectionId;
+	};
+    </script>
+	</head>
+<body>
+	<!--Header -->
+		<%include partials/header.ejs %>
+
+	<!-- <div class="gen_nav"> --><div class="gen_nav">
+		<%include partials/navigation.ejs %>
+		<p>
+		    <% if(currentUser){  %>
+		      Welcome
+		    <%= currentUser.userFirstName %>
+		    !!
+		  <% } %>
+		</p></div>
+
+	<!--main content -->
+	<div class = "main container">
+		<p class="con_deco">
+		<%= singleConnection.conName %></p>
+		<div class="host_img">
+	<img src="/assets/images/host_img.png" alt="User image"/>
+	</div>
+
+	<div class="con_highlight">
+	<div class="button choice">
+	<p>Hosted by Pushpdeep Gangrade<br><%= singleConnection.conDate %>  <br><%= singleConnection.conTime %><br>
+	<%= singleConnection.conLocation %></p>
+	<% if(currentUserId) { %> <% if(currentUserId ==
+					singleConnection.createdBy) { %>
+					<button
+						class="btnNotSure"
+						onclick="{onEditButtonClick('<%= singleConnection.conId %>')}"
+					>
+						Edit connection
+					</button>
+					<% } %> <% } %>
+				<% if(currentUserId) { %> <% if(currentUserId ==
+				singleConnection.createdBy) { %>
+				<button
+					class="btnNo"
+					onclick="{onDeleteButtonClick('<%= singleConnection.conId %>')}"
+				>
+					Delete connection
+				</button>
+				<% } %> <% } %>
+	</div>
+
+	<div class="button choice">
+	Are you going ?<br>
+	<input type="button" class="btnYes" value="Yes" onclick="{onBtnClick('Yes','<%= singleConnection.conId %>')}"/>
+	<input type="button" class="btnNo" value="No" onclick="{onBtnClick('No','<%= singleConnection.conId %>')}"/>
+	<input type="button" class="btnNotSure" value="Not Sure!" onclick="{onBtnClick('Maybe','<%= singleConnection.conId %>')}"/>
+
+	</div>
+
+
+	</div>
+	<div class="con_details">
+		<p class="con_deco">Details</p>
+
+		<p><%= singleConnection.conDetails %></p>
+	</div>
+
+
+	</div>
+
+	<!--footer -->
+		<%include partials/footer.ejs %>
+	<!-- <div class = "footer">
+		<p>Copyright &copy; 2019 Pushpdeep</p>
+
+	</div> -->
+
+</body>
+</html>

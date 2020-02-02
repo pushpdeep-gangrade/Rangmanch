@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Rangmanch</title>
+<script>
+      function onUpdate(id) {
+        window.location.href = "/connection?conId=" + id;
+      }
+      function onDelete(id) {
+        window.location.href = "/delete?conId=" + id;
+      }
+    </script>
+<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+	</head>
+<body>
+	<!--Header -->
+		<%include partials/header.ejs %>
+
+	<!--top nav bar -->
+	<div class="gen_nav">
+<% include partials/navigation.ejs %>
+<p>
+    <% if(currentUser){  %>
+      Welcome
+    <%= currentUser.userFirstName %>
+    !!
+  <% } %>
+</p>
+</div>
+
+	<!--main content -->
+	<div class = "main">
+		<p class="con_deco">My Connections</p>
+
+	<table class="tableStyle">
+		<tr>
+			<th>Connection</th>
+			<!-- <th>Category</th> -->
+			<th>Going</th>
+			<th>Action</th>
+		</tr>
+			<% savedConnections.forEach(value=>{ %>
+		<tr>
+			<td><%= value.connection.conName %></td>
+							<td><%= value.userRSVP %></td>
+
+			<td>
+			<input type="button" class="buttongen" value="Update" onclick="{onUpdate('<%= value.connection.conId %>')}"/>
+			<input type="button" class="buttongen" value="Delete" onclick="{onDelete('<%= value.connection.conId %>')}"/>
+			</td>
+		</tr>
+		    <% }); %>
+
+</table>
+
+	</div>
+
+	<!--footer -->
+		<%include partials/footer.ejs %>
+</body>
+</html>

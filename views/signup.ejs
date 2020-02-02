@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+	</head>
+<body>
+		<%include partials/header.ejs %>
+		<!-- nav bar --><div class="gen_nav">
+		<%include partials/navigation.ejs %>
+		<p>
+		    <% if(currentUser){  %>
+		      Welcome
+		    <%= currentUser.userFirstName %>
+		    !!
+		  <% } %>
+		</p></div>
+	<!--main content -->
+	<div class = "main">
+		<form class="newConForm" method="POST" action="/signUp">
+ 		<input type="text" id="userName" name="userName" placeholder="Username">
+		<% if(errorMessages[0]) { %><label class="inputvalidatation"><%= errorMessages[0].msg %></label><% } %><br>
+	   <input type="password" id="password" name="password" placeholder="Password">
+		 <% if(errorMessages[1]) { %><label class="inputvalidatation"><%= errorMessages[1].msg %></label><% } %><br>
+		 <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password">
+		 <% if(errorMessages[2]) { %><label class="inputvalidatation"><%= errorMessages[2].msg %></label><% } %><br>
+		 <input type="text" id="firstName" name="firstName" placeholder="Firstname">
+		 <% if(errorMessages[3]) { %><label class="inputvalidatation"><%= errorMessages[3].msg %></label><% } %><br>
+		 <input type="text" id="lastName" name="lastName" placeholder="Lastname">
+		 <% if(errorMessages[4]) { %><label class="inputvalidatation"><%= errorMessages[4].msg %></label><% } %><br>
+		 <input type="text" id="email" name="email" placeholder="Email">
+		 <% if(errorMessages[5]) { %><label class="inputvalidatation"><%= errorMessages[5].msg %></label><% } %><br>
+		  <input type="submit" value="SignUp">
+	  </form>
+    </div>
+	<!--footer -->
+		<%include partials/footer.ejs %>
+
+</body>
+</html>

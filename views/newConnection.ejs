@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="UTF-8">
+<title>Rangmanch</title>
+<link rel="stylesheet" href="/assets/stylesheets/index.css" type="text/css">
+	</head>
+<body>
+	<!--Header -->
+		<%include partials/header.ejs %>
+
+	<!--top nav bar --><div class="gen_nav">
+<%include partials/navigation.ejs%>
+
+<p>
+    <% if(currentUser){  %>
+      Welcome
+    <%= currentUser.userFirstName %>
+    !!
+  <% } %>
+</p></div>
+
+
+	<!--main content -->
+	<div class = "main">
+		<form class="newConForm" method="POST" action="/newConnection">
+ 		<input type="text" id="conId" name="conId" placeholder="Connection ID"  <% if(inputValues.length>0) { %> value= <%= inputValues[0] %><% } %>>
+			<% if(errorMessages[0]) { %><label class="inputvalidatation"><%= errorMessages[0].msg %></label><br><% } %>
+
+	    <input type="text" id="topic" name="topic" placeholder="Topic" <% if(inputValues.length>0) { %> value= <%= inputValues[1] %><% }%>>
+			<% if(errorMessages[1]) { %><label class="inputvalidatation"><%= errorMessages[1].msg %></label><br><% } %>
+
+	   <input type="text" id="name" name="name" placeholder="Name" <% if(inputValues.length>0) { %> value= <%= inputValues[2] %><% }%>>
+		 	<% if(errorMessages[2]) { %><label class="inputvalidatation"><%= errorMessages[2].msg %></label><br><% } %>
+
+			<input type="text" id="details" name="details" placeholder="Description" <% if(inputValues.length>0) { %> value= <%= inputValues[3] %><% }%>>
+		  <% if(errorMessages[3]) { %><label class="inputvalidatation"><%= errorMessages[3].msg %></label><br><% } %>
+
+			<input type="text" id="where" name="where" placeholder="Location" <% if(inputValues.length>0) { %> value= <%= inputValues[4] %><% }%>>
+			<% if(errorMessages[4]) { %><label class="inputvalidatation"><%= errorMessages[4].msg %></label><br><% } %>
+
+			<input type="text" id="date" name="date" placeholder="mm/dd/yyyy" <% if(inputValues.length>0) { %> value= <%= inputValues[5] %><% }%>>
+			<% if(errorMessages[5]) { %><label class="inputvalidatation"><%= errorMessages[5].msg %></label><br><% } %>
+
+			<input type="text" id="time" name="time" placeholder="Time" <% if(inputValues.length>0) { %> value= <%= inputValues[6] %><% }%>>
+			<% if(errorMessages[6]) { %><label class="inputvalidatation"><%= errorMessages[6].msg %></label><% } %>
+	    <input type="submit" value="Create Connection">
+	  </form>
+    </div>
+	<!--footer -->
+		<%include partials/footer.ejs %>
+
+</body>
+</html>
