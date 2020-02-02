@@ -1,0 +1,62 @@
+use Rangmanch_DB;
+
+db.dropDatabase();
+
+use Rangmanch_DB;
+
+db.users.insert({"userId" : "757user0106", "userName" : "Pushpdeep", "password" : { "salt" : "e724b8bf2e89c7d0", "passwordHash" : "e2e4aaa85b79e7c8be219d9420440eda9309ae23c70c9148eed7cdde83d1a86699d5a70c11f40d976f2bc5b4dc1fe146385085457f8ab99b4a6af65de1442c15" }, "userFirstName" : "Pushpdeep", "userLastName" : "Gangrade", "userEmail" : "pgangrad@uncc.edu"});
+db.users.insert({"userId" : "6139user0025", "userName" : "David", "password" : {  "salt" : "b563e7b9f2bc9533", "passwordHash" : "f66d16b1f9a1959b21b18b0a987eb178a04b25adbe03ad0e0bf80e4cf60b97b78cdb48fd6551c19727eecadb76f35132b0acd21a5087f3087d9216e6a71e4b0c" }, "userFirstName" : "David", "userLastName" : "Guetta", "userEmail" : "david.guetta@gmail.com"});
+
+db.connections.insert({"conId":"ActingMeisner",
+		    "conName":"Meisner Acting technique",
+			"conTopic":"Acting",
+			"conDetails":"The focus of the Meisner approach is for the actor to get out of their head, such that the actor is behaving instinctively to the surrounding environment",
+			"conLocation":"Woordword",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"6139user0025"});
+
+db.connections.insert({"conId":"DanceContemp",
+		    "conName":"Contemporary",
+			"conTopic":"Dance",
+			"conDetails":"Contemporary dance is a genre of dance performance that developed during the mid twentieth century and has since grown to become one of the dominant genres for formally trained dancers throughout the world",
+			"conLocation":"Library",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"6139user0025"});
+			
+db.connections.insert({"conId":"DanceHipHop",
+		    "conName":"Hip-Hop",
+			"conTopic":"Dance",
+			"conDetails":"Hip-hop dance refers to street dance styles primarily performed to hip-hop music or that have evolved as part of hip-hop culture",
+			"conLocation":"Union",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"6139user0025"});
+			
+db.connections.insert({"conId":"DanceSalsa",
+		     	"conName":"Salsa",
+			"conTopic":"Dance",
+			"conDetails":"Salsa is a popular form of social dance originating in Eastern Cuba. The Salsa we hear now is said to be born in New York to a mixture of Afro Cuban folk dances with Jazz.",
+			"conLocation":"Cone",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"757user0106"});
+			
+db.connections.insert({"conId":"ActingClassical",
+		    "conName":"Classical Acting workshop",
+			"conTopic":"Acting",
+			"conDetails":"This workshop will help you get the knowledge of classical acting which includes body expression voice expression, imagination, personalizing, improvisation etc.",
+			"conLocation":"Online",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"757user0106"});
+			
+db.connections.insert({"conId":"ActingMethod",
+		    "conName":"Method Acting tutorial",
+			"conTopic":"Acting",
+			"conDetails":"Method acting is a range of training and rehearsal techniques that seek to encourage sincere and emotionally expressive performances, as formulated by a number of different theatre practitioners",
+			"conLocation":"Rowe arts",
+			"conDate":"Sept 22,2019",
+			"conTime":"5pm-7pm",
+			"createdBy":"757user0106"});
